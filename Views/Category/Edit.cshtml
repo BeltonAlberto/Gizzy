@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Edit";
+}
+@model Category;
+<form action="" method="post">
+    <input asp-for="Id" hidden>
+    <div class="mb-3">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" type="text" asp-for="Name">
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DisplayOrder">Display Order</label>
+        <input class="form-control" type="number" class="form-control" asp-for="DisplayOrder">
+        <span class="text-danger" asp-validation-for="DisplayOrder"></span>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-success" type="submit">Update</button>
+        <button class="btn btn-outline-secondary" type="submit" asp-action="Index">Cancel</button>
+    </div>
+</form>

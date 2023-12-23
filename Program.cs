@@ -1,6 +1,11 @@
+using gizzy;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connString = builder.Configuration.GetConnectionString("DevConnection");
+builder.Services.AddDbContext<ApplicationDbContext>((options) => options.UseSqlServer(connString));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
