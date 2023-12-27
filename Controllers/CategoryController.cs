@@ -45,7 +45,7 @@ public class CategoryController : Controller
         {
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
-            TempData["success"] = $"{category.Name} added successfully!";
+            TempData["success"] = $"{category.Name} Added Successfully!";
             return RedirectToAction("Index");
 
         }
@@ -105,7 +105,7 @@ public class CategoryController : Controller
         {
             _context.Categories.Update(category);
             await _context.SaveChangesAsync();
-            TempData["success"] = $"{category.Name} updated successfully!";
+            TempData["success"] = $"{category.Name} Updated Successfully!";
             return RedirectToAction("Index");
         }
         return View();
@@ -130,7 +130,7 @@ public class CategoryController : Controller
             return View("NotFoundView");
         }
         _context.Categories.Remove(category);
-        TempData["success"] = $"Excluded successfully!";
+        TempData["success"] = $"Excluded Successfully!";
         await _context.SaveChangesAsync();
 
         return RedirectToAction("Index");
